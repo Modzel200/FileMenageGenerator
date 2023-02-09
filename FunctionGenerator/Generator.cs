@@ -88,6 +88,19 @@ namespace {mainMethod.ContainingNamespace.ToDisplayString()}
                 AppendtoFile(path_to_file,numbertoString+"" "");
             }}
         }}
+        public static partial void ShowFilePath(string path_to_file)
+        {{
+            FileInfo f = new FileInfo(path_to_file);
+            Console.WriteLine(f.FullName);
+        }}
+        public static partial void CopyFile(string path_to_file, string new_file_name)
+        {{
+            File.Copy(path_to_file,new_file_name,true);
+        }}
+        public static partial void DeleteFile(string path_to_file)
+        {{
+            File.Delete(path_to_file);
+        }}
     }}
     
 }}
